@@ -3,9 +3,9 @@
 
 “Ur WaterIntake!” is a water intake recommendation app to help users consistent with their daily hydration routine as a part of healthy lifestyle. Daily inputs from users based on their condition will be calculated within main section. 
 
-**Github**:(<https://github.com/BobbySaikong/UrWaterIntake->)
+**Github**:(<https://github.com/BobbySaikong/UrWaterIntake>)
 
-**Youtube:** 
+**Youtube:** (<https://youtu.be/75n_D7BIFWg>)
 
 **Inputs**
 
