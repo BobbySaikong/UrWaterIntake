@@ -15,6 +15,8 @@ runApp(MaterialApp(home: Splashscreen(),));
 }
 
 class _MainAppState extends State<MainApp> {
+
+  //initialize items for dropdownbutton temperature
   List<DropdownMenuItem<String>> temperature = [
     DropdownMenuItem<String>(value: 'Hot', child: Text('Hot')),
     DropdownMenuItem<String>(value: 'Cold', child: Text('Cold')),
@@ -23,7 +25,8 @@ class _MainAppState extends State<MainApp> {
     DropdownMenuItem<String>(value: 'Sedentary', child: Text('Sedentary')),
     DropdownMenuItem<String>(value: 'Active', child: Text('Active')),
   ];
-
+//initialize items for dropdownbutton temperature
+//initialize initialvalue for dropdown button and calculation variable
   String selectedvalue1 = 'Hot';
   double extraintake1 = 0;
   String selectedvalue2 = 'Sedentary';
@@ -31,14 +34,14 @@ class _MainAppState extends State<MainApp> {
   double miminumwaterintake = 2.0;
   double totalwaterintake = 0;
   String totalwatervalue = '0';
-
+//controller for recieving textfieldform input
   TextEditingController weightcontroller = TextEditingController();
   TextEditingController totalwaterintake_controller = TextEditingController();
   final textformfieldkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
+        appBar: AppBar(//appbar title
           title: Center(child: Text('Ur WaterIntake!',style: TextStyle(fontStyle: FontStyle.italic),)),
           backgroundColor: Colors.blueGrey,
         ),
@@ -90,6 +93,7 @@ class _MainAppState extends State<MainApp> {
                     child: SizedBox(
                       height: 60,
                       width: 130,
+                      //dropdown button for temperature
                       child: DropdownButton(
                         value: selectedvalue1,
                         items: temperature,
@@ -108,6 +112,7 @@ class _MainAppState extends State<MainApp> {
                     child: SizedBox(
                       height: 60,
                       width: 130,
+                      //dropdown button for activity level
                       child: DropdownButton(
                         value: selectedvalue2,
                         items: activitylevel,
@@ -122,6 +127,7 @@ class _MainAppState extends State<MainApp> {
                   ),
                 ],
               ),
+              //calculate button
               ElevatedButton(
                 onPressed: () {
                   if (textformfieldkey.currentState!.validate()) {
@@ -142,6 +148,7 @@ class _MainAppState extends State<MainApp> {
                 child: Text('WATER INTAKE RECOMMENED (Liters)'),
               ),
 
+            //recommennded water intake field
               TextFormField(
                 readOnly: true,
                 controller: totalwaterintake_controller,
@@ -161,11 +168,14 @@ class _MainAppState extends State<MainApp> {
     );
   }
 
+// function to calculate water intake
   double calculateWater(
     TextEditingController weightcontroller,
     String selectedvalue1,
     String selectedvalue2,
   ) {
+
+    //default value for temperature and activity level 
     if (selectedvalue1 == 'Hot') {
       extraintake1 = 0.5;
     } else {
@@ -185,10 +195,4 @@ class _MainAppState extends State<MainApp> {
     return totalwaterintake;
   }
 
-  /*bool nullChecker (TextEditingController weightcontroller){
-      if(weightcontroller.text.isEmpty == true){
-        return SnackBar
-      }
-      
-    }*/
 }

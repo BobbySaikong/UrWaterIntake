@@ -16,12 +16,15 @@ class Splashscreen extends StatefulWidget {
 class _SplashscreenState extends State<Splashscreen> {
   @override
   Widget build(BuildContext context) {
-    Timer(Duration(seconds: 10), () {
+
+    //timer to delay before navigating to second page
+    Timer(Duration(seconds: 3), () {
       Navigator.of(
         context,
       ).pushReplacement(MaterialPageRoute(builder: (context) => MainApp()));
     });
 
+  //splashscreen with app name
     return MaterialApp(
       home: Scaffold(
         body: Center(
