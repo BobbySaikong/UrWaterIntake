@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water_intake_calculator/main.dart';
+import 'main.dart';
 
 class MainApp extends StatefulWidget {
   const MainApp({super.key});

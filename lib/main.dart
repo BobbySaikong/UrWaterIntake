@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:water_intake_calculator/calculate.dart';
+import 'calculate.dart';
 
 void main() {
   runApp(MaterialApp(home: Splashscreen()));
@@ -24,7 +24,7 @@ class _SplashscreenState extends State<Splashscreen> {
       ).pushReplacement(MaterialPageRoute(builder: (context) => MainApp()));
     });
 
-  //splashscreen with app name
+  //splashscreen with appp a
     return MaterialApp(
       home: Scaffold(
         body: Center(
